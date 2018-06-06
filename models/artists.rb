@@ -43,9 +43,16 @@ class Artist
   end
 
   def delete_artist()
-    values = [@id]
-    sql = "DELETE * FROM artists WHERE id = $1"
+    values = [@artist_id]
+    sql = "DELETE FROM artists WHERE id = $1"
     SqlRunner.run(sql, values)
   end
+
+  def update_artist()
+    values = ["Lou Reed"]
+    sql = "UPDATE artists SET name = $1"
+    SqlRunner.run(sql, values)
+  end
+  # UPDATE movies SET show_time = '21:05' WHERE id = 15;
 
 end
