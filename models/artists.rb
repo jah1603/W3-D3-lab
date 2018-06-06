@@ -53,6 +53,14 @@ class Artist
     sql = "UPDATE artists SET name = $1"
     SqlRunner.run(sql, values)
   end
+
+  def self.find_by_id(id)
+    values = [id]
+    sql = "SELECT * FROM artists WHERE id = $1"
+    artist = SqlRunner.run(sql, values)
+    return artist.map { |person| Artist.new(person)}
+  end
+
   # UPDATE movies SET show_time = '21:05' WHERE id = 15;
 
 end
