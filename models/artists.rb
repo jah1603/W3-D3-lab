@@ -61,6 +61,4 @@ class Artist
     return artist.map { |person| Artist.new(person)}
   end
 
-  # UPDATE movies SET show_time = '21:05' WHERE id = 15;
-
 end
